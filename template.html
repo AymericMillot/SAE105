@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portefolio</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <!--En tête-->
+    <header>
+        <!--Icon + accès à la liste des SAE-->
+        <div id="content-svg">
+            <a id="back" href="Liste.html"><svg fill="#ffffff" width="42px" height="42px" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <g data-name="Layer 2">
+                            <g data-name="arrow-back">
+                                <rect width="24" height="24" transform="rotate(90 12 12)" opacity="0"></rect>
+                                <path
+                                    d="M19 11H7.14l3.63-4.36a1 1 0 1 0-1.54-1.28l-5 6a1.19 1.19 0 0 0-.09.15c0 .05 0 .08-.07.13A1 1 0 0 0 4 12a1 1 0 0 0 .07.36c0 .05 0 .08.07.13a1.19 1.19 0 0 0 .09.15l5 6A1 1 0 0 0 10 19a1 1 0 0 0 .64-.23 1 1 0 0 0 .13-1.41L7.14 13H19a1 1 0 0 0 0-2z">
+                                </path>
+                            </g>
+                        </g>
+                    </g>
+                </svg></a>
+            <a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                    fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline> <!--Icone de retour-->
+                </svg>
+            </a>
+        </div>
+
+        <!--Num SAE + Nom SAE-->
+        <h1></h1>
+    </header>
+    <!--Description + compétence -->
+    <div class="fond_partie_1">
+        <h2></h2>
+        <h2>Description :</h2> <!--Titre h2-->
+        <p></p>
+    </div>
+
+    <!--Deux boutons-->
+    <div class="mise_en_page"> <!--Mise en page de la page-->
+        <div class="fond_partie_2" onclick="fonction_AC()">
+            Apprentissage critique :
+        </div>
+        <div class="fond_partie_2" onclick="fonction_Re()">
+            Ressource :
+        </div>
+        <div class="fond_partie_2 affiche_pdf" onclick="fonction_DN()">
+            Ouvrir le PDF explicatif
+        </div>
+
+    </div>
+
+    <ul>
+
+    </ul>
+
+    <script src="js/dataSAE.js"></script> <!--Lien vers le fichier js-->
+    <script src="js/script_template.js"></script> <!--Lien vers le fichier js-->
+
+</body>
+
+</html>

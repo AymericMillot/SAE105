@@ -1,0 +1,77 @@
+body {
+    margin: 0px;
+    background-image: url(../img/img_beau.jpg); /* image de fond */
+    background-size: cover; /* taille de l'image */
+    background-position: 0%; /* position de l'image */
+    min-height: 100vh; /* hauteur de la page */
+    font-family: Arial, Helvetica, sans-serif; /* police de caractère */
+    background-repeat: no-repeat; /* pas de répétition de l'image */
+    background-attachment: fixed; /* image fixe */
+    min-height: 100vh; /* hauteur de la page */
+}
+
+header {
+    display: flex; /* affichage en ligne */
+    justify-content: space-between; /* espace entre les éléments */
+    padding: 0px 16px 0px 16px; 
+    margin: 16px; 
+
+}
+
+h1 {
+    color: white;
+}
+
+
+
+a {
+    font-size: 25px;
+    /* taille texte*/
+    color: rgb(255, 255, 255);
+    padding-top: 16px;
+    text-decoration: none;
+    padding: 8px 16px 8px 16px;
+    font-family: Arial, Helvetica, sans-serif; /* police de caractère */
+    border: solid;
+    border-radius: 16px;
+    margin-top: 8px;
+    border-width: 2px;
+    background-color: rgba(255, 255, 255, 0.4); /* couleur de fond */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; /* le curseur devient une main */
+}
+
+p {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    width: 100%;
+}
+
+div {
+    display: flex;
+}
+
+.pdf {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#presentation {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 16px;
+    border-radius: 16px; /* arrondi des bords */
+    margin-top: 30%;
+    margin-bottom: auto;
+    text-align: center; /* alignement du texte */
+}
