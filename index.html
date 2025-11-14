@@ -1,29 +1,64 @@
-<!DOCTYPE html> <!--Type de document-->
-<html lang="fr"> <!--Langue de la page-->
+<!DOCTYPE html>
+<html lang="fr">
 
-<head> <!--En-tête de la page-->
-    <meta charset="UTF-8"> <!--Format des caractères-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!--Taille de l'écran-->
-    <title>Portfolio Aymeric</title> <!--Titre de la page-->
-    <link rel="icon" href="img/coin coin.svg"> <!--Icone de la page-->
-    <link rel="stylesheet" href="style/home.css"> <!--Lien vers le fichier css-->
-    <link rel="preconnect" href="https://fonts.googleapis.com"> <!--Lien vers les polices d'écriture-->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!--Lien vers les polices d'écriture-->
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Yuji+Mai&display=swap" rel="stylesheet"> <!--Police d'écriture-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio sombre et moderne d'Aymeric Millot, étudiant en BUT MMI : découvrez ses SAÉ, ses compétences et ses réalisations.">
+    <meta name="keywords" content="Portfolio, Aymeric Millot, BUT MMI, SAE, communication numérique">
+    <title>Portfolio Aymeric Millot</title>
+    <link rel="icon" href="img/coin coin.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/home.css">
 </head>
 
-<body> <!--Corps de la page-->
-    <header>
-        <h1>Bienvenue sur le site d'<span>Aymeric</span></h1> <!--Titre de la page-->
-        <a href="Liste.html">SAE</a> <!--Lien vers la page Liste-->
-        
+<body class="home-page">
+    <header class="hero-header" aria-label="Navigation principale">
+        <div class="brand">Aymeric Millot</div>
+        <nav>
+            <a href="Liste.html" class="ghost-link">Voir les SAÉ</a>
+            <a href="mailto:aymeric.millot@example.com" class="ghost-link">Me contacter</a>
+        </nav>
     </header>
+
     <main>
-        <p id="presentation">Je m'appelle Aymeric Millot et je suis ravie de vous présenter mon site Portfolio
-            je vous laisse découvrir en cliquant sur le bouton "SAE" ci-dessus. Bonne visite !
-        </p> <!--Présentation de la page-->
-    </main> <!--Fin du corps de la page-->
+        <section class="hero" aria-labelledby="hero-title">
+            <p class="eyebrow">Portfolio numérique 2024</p>
+            <h1 id="hero-title">Une expérience immersive, sombre et élégante</h1>
+            <p class="lead">Plongez dans un univers minimaliste pensé pour mettre en valeur les SAÉ du BUT MMI. Des transitions fluides,
+                un design contemporain et un contenu optimisé pour le référencement naturel.</p>
+            <div class="cta-group">
+                <a class="btn primary" href="Liste.html">Découvrir les SAÉ</a>
+                <a class="btn secondary" href="pdf/SAE1.01.pdf" target="_blank" rel="noopener">Exemple de livrable</a>
+            </div>
+        </section>
 
-</body> <!--Fin du corps de la page-->
+        <section class="highlights" aria-label="Points forts du site">
+            <article class="highlight-card">
+                <h2>Design sombre</h2>
+                <p>Palette contrastée, typographie Space Grotesk et cartes en verre dépoli pour un rendu premium.</p>
+            </article>
+            <article class="highlight-card">
+                <h2>Expérience fluide</h2>
+                <p>Animations pilotées par GSAP et interactions douces pour guider l’utilisateur.</p>
+            </article>
+            <article class="highlight-card">
+                <h2>SEO maîtrisé</h2>
+                <p>Balises optimisées, contenu structuré et performance au cœur de la réalisation.</p>
+            </article>
+        </section>
+    </main>
 
-</html> <!--Fin du document-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-93mYaqk7HX/IpYRXl2vlA38nSxrdbidKdvUSsfx8bVsgcuyo6edSxnl2xe50Tzw9uQWGWpZJYG1ChB7rR0PeQw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        gsap.from('.hero-header', { y: -40, opacity: 0, duration: 1, ease: 'power3.out' });
+        gsap.from('.hero h1', { y: 20, opacity: 0, duration: 1, delay: 0.2, ease: 'power3.out' });
+        gsap.from('.lead', { y: 20, opacity: 0, duration: 1, delay: 0.3, ease: 'power3.out' });
+        gsap.from('.btn', { y: 30, opacity: 0, duration: 1, delay: 0.5, stagger: 0.1, ease: 'power3.out' });
+        gsap.from('.highlight-card', { opacity: 0, y: 40, duration: 0.9, delay: 0.6, stagger: 0.15, ease: 'power3.out' });
+    </script>
+</body>
+
+</html>
