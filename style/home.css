@@ -1,10 +1,7 @@
 :root {
-    --bg-gradient: radial-gradient(circle at top, #1f2a37 0%, #0b0f17 55%, #05070c 100%);
-    --text-primary: #f5f7fb;
+    --bg-color: #05070c;
+    --text-color: #f5f7fb;
     --text-muted: #b4bcd0;
-    --accent: #7c5dff;
-    --accent-strong: #4ae3b5;
-    --glass: rgba(255, 255, 255, 0.05);
     font-size: 16px;
 }
 
@@ -15,152 +12,31 @@
 body {
     margin: 0;
     font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
-    background: var(--bg-gradient);
-    color: var(--text-primary);
+    background: radial-gradient(circle at top, #121826 0%, var(--bg-color) 70%);
+    color: var(--text-color);
     min-height: 100vh;
-    padding: 2.5rem clamp(1.5rem, 5vw, 5rem) 4rem;
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.home-page {
-    background-attachment: fixed;
-}
-
-.hero-header {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-}
-
-.hero-header nav {
-    display: flex;
-    gap: 1.25rem;
-}
-
-.brand {
-    font-weight: 600;
-    font-size: 1.25rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-}
-
-.ghost-link {
-    color: var(--text-muted);
-    text-decoration: none;
-    font-size: 0.95rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
-}
-
-.ghost-link:hover {
-    color: var(--accent-strong);
-}
-
-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
 }
 
 .hero {
-    max-width: 760px;
-}
-
-.eyebrow {
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    font-size: 0.85rem;
-    color: var(--accent-strong);
-    margin-bottom: 0.5rem;
-}
-
-h1 {
-    font-size: clamp(2.6rem, 4vw, 4.2rem);
-    line-height: 1.1;
-    margin: 0 0 1rem;
-}
-
-.lead {
-    color: var(--text-muted);
-    line-height: 1.6;
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-}
-
-.cta-group {
+    text-align: center;
+    max-width: 720px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.btn {
-    border-radius: 999px;
-    padding: 0.85rem 1.75rem;
-    text-decoration: none;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
-}
-
-.btn.primary {
-    background: linear-gradient(120deg, var(--accent), #5ac8ff);
-    color: #03060d;
-    box-shadow: 0 15px 35px rgba(92, 200, 255, 0.25);
-}
-
-.btn.secondary {
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: var(--text-primary);
-}
-
-.btn:hover {
-    transform: translateY(-3px) scale(1.02);
-}
-
-.highlights {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    flex-direction: column;
     gap: 1.5rem;
 }
 
-.highlight-card {
-    padding: 1.75rem;
-    border-radius: 1.25rem;
-    background: var(--glass);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(10px);
-}
-
-.highlight-card h2 {
-    margin-top: 0;
-    margin-bottom: 0.75rem;
-    font-size: 1.3rem;
-}
-
-.highlight-card p {
+.hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
     margin: 0;
-    color: var(--text-muted);
-    line-height: 1.6;
 }
 
-@media (max-width: 720px) {
-    body {
-        padding: 1.5rem;
-    }
-
-    .hero-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .hero-header nav {
-        width: 100%;
-        justify-content: space-between;
-    }
+.hero-subtitle {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.6;
 }

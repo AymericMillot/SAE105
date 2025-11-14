@@ -4,44 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio sombre et moderne d'Aymeric Millot, étudiant en BUT MMI : découvrez ses SAÉ, ses compétences et ses réalisations.">
-    <meta name="keywords" content="Portfolio, Aymeric Millot, BUT MMI, SAE, communication numérique">
-    <title>Portfolio Aymeric Millot</title>
+    <meta name="description" content="Mon site de la SAÉ 105 : un accueil ultra minimaliste pour présenter les SAÉ et ressources de la première année du BUT MMI.">
+    <title>Mon site de la SAE 105</title>
     <link rel="icon" href="img/coin coin.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/home.css">
 </head>
 
 <body class="home-page">
-    <header class="hero-header" aria-label="Navigation principale">
-        <div class="brand">Aymeric Millot</div>
-        <nav>
-            <a href="Liste.html" class="ghost-link">Voir les SAÉ</a>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero" aria-labelledby="hero-title">
-            <p class="eyebrow">Portfolio SAE 105</p>
-            <div class="cta-group">
-                <a class="btn primary" href="Liste.html">Découvrir les SAÉ</a>
-                <a class="btn secondary" href="pdf/SAE1.01.pdf" target="_blank" rel="noopener">Exemple de livrable</a>
-            </div>
-        </section>
-
-        </section>
+    <main class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title" class="hero-title">Mon site de la SAE 105</h1>
+        <p class="hero-subtitle">Découvrez mon site de la SAE 105 et découvrez toutes les SAÉ et ressources de la première année du BUT MMI.</p>
     </main>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-93mYaqk7HX/IpYRXl2vlA38nSxrdbidKdvUSsfx8bVsgcuyo6edSxnl2xe50Tzw9uQWGWpZJYG1ChB7rR0PeQw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        gsap.from('.hero-header', { y: -40, opacity: 0, duration: 1, ease: 'power3.out' });
-        gsap.from('.hero h1', { y: 20, opacity: 0, duration: 1, delay: 0.2, ease: 'power3.out' });
-        gsap.from('.lead', { y: 20, opacity: 0, duration: 1, delay: 0.3, ease: 'power3.out' });
-        gsap.from('.btn', { y: 30, opacity: 0, duration: 1, delay: 0.5, stagger: 0.1, ease: 'power3.out' });
-        gsap.from('.highlight-card', { opacity: 0, y: 40, duration: 0.9, delay: 0.6, stagger: 0.15, ease: 'power3.out' });
-    </script>
 </body>
 
 </html>
