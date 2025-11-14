@@ -5,69 +5,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portefolio</title>
+    <meta name="description" content="Fiche détaillée de la SAÉ sélectionnée : objectifs, apprentissages critiques, ressources et livrables d'Aymeric Millot.">
+    <title>Portefolio – Détail de la SAÉ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
 </head>
 
-<body>
-    <!--En tête-->
-    <header>
-        <!--Icon + accès à la liste des SAE-->
-        <div id="content-svg">
-            <a id="back" href="Liste.html"><svg fill="#ffffff" width="42px" height="42px" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <g data-name="Layer 2">
-                            <g data-name="arrow-back">
-                                <rect width="24" height="24" transform="rotate(90 12 12)" opacity="0"></rect>
-                                <path
-                                    d="M19 11H7.14l3.63-4.36a1 1 0 1 0-1.54-1.28l-5 6a1.19 1.19 0 0 0-.09.15c0 .05 0 .08-.07.13A1 1 0 0 0 4 12a1 1 0 0 0 .07.36c0 .05 0 .08.07.13a1.19 1.19 0 0 0 .09.15l5 6A1 1 0 0 0 10 19a1 1 0 0 0 .64-.23 1 1 0 0 0 .13-1.41L7.14 13H19a1 1 0 0 0 0-2z">
-                                </path>
-                            </g>
-                        </g>
-                    </g>
-                </svg></a>
-            <a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                    fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    <polyline points="9 22 9 12 15 12 15 22"></polyline> <!--Icone de retour-->
-                </svg>
-            </a>
-        </div>
-
-        <!--Num SAE + Nom SAE-->
-        <h1></h1>
+<body class="sae-page">
+    <header class="site-header">
+        <a class="logo" href="Liste.html" aria-label="Retour à la liste">AM</a>
+        <nav>
+            <a href="Liste.html">Toutes les SAÉ</a>
+            <a href="index.html">Accueil</a>
+        </nav>
     </header>
-    <!--Description + compétence -->
-    <div class="fond_partie_1">
-        <h2></h2>
-        <h2>Description :</h2> <!--Titre h2-->
-        <p></p>
-    </div>
 
-    <!--Deux boutons-->
-    <div class="mise_en_page"> <!--Mise en page de la page-->
-        <div class="fond_partie_2" onclick="fonction_AC()">
-            Apprentissage critique :
-        </div>
-        <div class="fond_partie_2" onclick="fonction_Re()">
-            Ressource :
-        </div>
-        <div class="fond_partie_2 affiche_pdf" onclick="fonction_DN()">
-            Ouvrir le PDF explicatif
-        </div>
+    <main class="sae-main">
+        <section class="sae-hero" aria-labelledby="sae-title">
+            <p class="eyebrow" id="sae-competence"></p>
+            <h1 id="sae-title"></h1>
+            <p class="lead" id="sae-description"></p>
+            <div class="cta-group">
+                <a id="pdf-link" class="btn primary" href="#" target="_blank" rel="noopener">Consulter le PDF</a>
+                <a class="btn secondary" href="Liste.html">Voir les autres SAÉ</a>
+            </div>
+        </section>
 
-    </div>
+        <section class="sae-detail-grid">
+            <article class="detail-card">
+                <div class="card-head">
+                    <h2>Apprentissages critiques</h2>
+                    <p>Compétences évaluées et justifications associées.</p>
+                </div>
+                <ul id="ac-list" class="detail-list"></ul>
+            </article>
+            <article class="detail-card">
+                <div class="card-head">
+                    <h2>Ressources mobilisées</h2>
+                    <p>Modules, cours et expertises sollicitées pour mener à bien la SAÉ.</p>
+                </div>
+                <ul id="resource-list" class="detail-list"></ul>
+            </article>
+        </section>
+    </main>
 
-    <ul>
-
-    </ul>
-
-    <script src="js/dataSAE.js"></script> <!--Lien vers le fichier js-->
-    <script src="js/script_template.js"></script> <!--Lien vers le fichier js-->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-93mYaqk7HX/IpYRXl2vlA38nSxrdbidKdvUSsfx8bVsgcuyo6edSxnl2xe50Tzw9uQWGWpZJYG1ChB7rR0PeQw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/dataSAE.js"></script>
+    <script src="js/script_template.js"></script>
 </body>
 
 </html>
