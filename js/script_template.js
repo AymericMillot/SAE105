@@ -1,33 +1,49 @@
-//Pour récup le n° SAE en passant par le nom du lien
-let param = new URLSearchParams(location.search); //Récupère les paramètres de l'URL
-let num = param.get("num"); //Récupère le paramètre "num" de l'URL
+document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(location.search);
+    const num = params.get('num');
 
-//Entête depuis les datas
-document.querySelector("h1").innerHTML = num + " " + SAE[num]["titre"]; 
-//description + compétence depuis les datas
-document.querySelector("h2").innerHTML = "<span>Compétence : </span>" + SAE[num]["compétences"]; //Compétence depuis les datas
-document.querySelector("p").innerHTML = SAE[num]["description"]; //Description depuis les datas
-
-//Fonction bouton AC depuis les datas
-function fonction_AC() { //Fonction AC
-    document.querySelector("ul").innerHTML = "" //Vide la liste
-    let resultat = "";  //Initialisation de la variable
-    for (let numAC in SAE[num]['AC']) { //Boucle sur les AC
-        resultat += `<li class="apparition" onclick="justifi('${numAC}')"> ${numAC} ${SAE[num]["AC"][numAC]["description_ac"]}</li>` //Affichage de la liste
+    if (!num || !SAE[num]) {
+        document.querySelector('.sae-main').innerHTML = '<p>SAÉ introuvable. <a href="Liste.html">Retour à la liste</a></p>';
+        return;
     }
-    document.querySelector("ul").innerHTML = resultat; //Affichage de la liste
-    document.querySelector("ul").classList.add("liste_template"); //Ajout de la classe pour le CSS
-}
 
-//Fonction bouton RE depuis les datas
-function fonction_Re() { //Fonction RE
-    document.querySelector("ul").innerHTML = "" //Vide la liste
-    let resultat = ""; //Initialisation de la variable
-    for (let numRE in SAE[num]['ressources']) { //Boucle sur les ressources
-        resultat += "<li class='apparition'>" + numRE + " " + SAE[num]["ressources"][numRE] + "</li>"; //Affichage de la liste
+    const data = SAE[num];
+    const title = document.querySelector('#sae-title');
+    const description = document.querySelector('#sae-description');
+    const competence = document.querySelector('#sae-competence');
+    const pdfLink = document.querySelector('#pdf-link');
+    const acList = document.querySelector('#ac-list');
+    const resourceList = document.querySelector('#resource-list');
+
+    title.textContent = `${num} — ${data.titre}`;
+    description.innerHTML = data.description;
+    competence.textContent = `Compétence${data['compétences'].length > 1 ? 's' : ''} : ${data['compétences'].join(', ')}`;
+    pdfLink.href = `pdf/${num}.pdf`;
+
+    const acItems = Object.entries(data.AC || {}).map(([code, details]) => {
+        const justification = (details.justifier || '').trim();
+        return `
+            <li>
+                <strong>${code}</strong>
+                <p>${details.description_ac}</p>
+                ${justification ? `<p class="justification">${justification}</p>` : ''}
+            </li>
+        `;
+    }).join('');
+
+    acList.innerHTML = acItems || '<li>Pas encore de justification associée.</li>';
+
+    const resItems = Object.entries(data.ressources || {}).map(([code, label]) => `
+        <li>
+            <strong>${code}</strong>
+            <p>${label}</p>
+        </li>
+    `).join('');
+
+    resourceList.innerHTML = resItems;
+
+    if (window.gsap) {
+        gsap.from('.sae-hero', { opacity: 0, y: 30, duration: 0.8, ease: 'power3.out' });
+        gsap.from('.detail-card', { opacity: 0, y: 40, duration: 0.8, delay: 0.2, stagger: 0.15, ease: 'power3.out' });
     }
-    document.querySelector("ul").innerHTML = resultat; //Affichage de la liste
-    document.querySelector("ul").classList.add("liste_template"); //Ajout de la classe pour le CSS
-}
-
-document.querySelector(".affiche_pdf").innerHTML = `<a href="pdf/${num}.pdf" target="_blank">Télécharger le PDF</a>`; //Lien PDF
+});
